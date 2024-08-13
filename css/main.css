@@ -179,6 +179,11 @@ nav ul {
 
 nav ul li a {
   font-size: var(--fontSize-8);
+  transition: var(--transition-1);
+}
+
+nav ul li a:hover{
+  color: var(--text-blue);
 }
 
 nav .nav-btn button {
@@ -190,15 +195,38 @@ nav .nav-btn button {
   width: 150px;
 }
 
+.menu-btn {
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn span:nth-child(1) {
+  width: 20px;
+  height: 3px;
+  background: white;
+  margin-bottom: 3px;
+}
+.menu-btn span:nth-child(2) {
+  width: 15px;
+  height: 3px;
+  background: white;
+  margin-bottom: 3px;
+}
+.menu-btn span:nth-child(3) {
+  width: 10px;
+  height: 3px;
+  background: white;
+  margin-bottom: 3px;
+}
+
 .section1 {
   display: flex;
-  align-items: center;
   justify-items: flex-start;
   margin-top: var(--section-spacing);
-  background-image: url("./../hero-img.png");
+  background-image: url("/images/hero\ image.svg");
   background-repeat: no-repeat;
   background-position: center right;
-  background-size: contain;
+  background-size: 658px 750px;
 }
 
 .s1-content {
@@ -259,22 +287,23 @@ nav .nav-btn button {
 
 /* section---2 */
 
-.section2 {
-  margin-top: var(--section-spacing);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 48px;
+.section2-bg {
+  background-image: url("/images/map.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
 }
 
-.s2-image img {
-  max-width: 685px;
-  margin-left: -80px;
-  height: 400px;
+.section2 {
+  margin-top: var(--section-spacing);
+  padding: 50px 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .s2-content {
-  max-width: 40%;
+  width: 40%;
 }
 
 .s2-content a {
@@ -398,31 +427,65 @@ nav .nav-btn button {
   color: var(--text-gray);
 }
 
-.menu-btn{
-  cursor: pointer;
+.s4-image img {
+  width: 100%;
 }
 
-.menu-btn span:nth-child(1){
-  width: 20px;
-  height: 3px;
-  background: white;
-  margin-bottom: 3px;
+.section5 {
+  margin-top: var(--section-spacing);
 }
-.menu-btn span:nth-child(2){
-  width: 15px;
-  height: 3px;
-  background: white;
-  margin-bottom: 3px;
+
+.s5-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.menu-btn span:nth-child(3){
-  width: 10px;
-  height: 3px;
-  background: white;
-  margin-bottom: 3px;
+
+.s5-item ul {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.s5-item ul li {
+  font-size: var(--fontSize-8);
+  font-weight: var(--weight-semiBold);
+  text-align: center;
+  transition: var(--transition-2);
+
+}
+
+.s5-item ul li:nth-child(1) {
+  padding: 10px 32px;
+  background: var(--bg-blue);
+  color: white;
+  border-radius: var(--radius-3);
+}
+
+.s5-item ul li:hover {
+  padding: 10px 32px;
+  background: var(--bg-blue);
+  color: white;
+  border-radius: var(--radius-3);
+}
+
+.s5-contents .content a {
+  color: var(--text-blue);
+  font-size: var(--fontSize-6);
+}
+
+.s5-contents .content h2 {
+  font-family: var(--fontFamily-michroma);
+  font-size: var(--fontSize-9);
+  line-height: 48px;
+  font-weight: var(--weight-regular);
 }
 /* responsive  */
 
 @media only screen and (max-width: 1400px) {
+  :root {
+    --fontSize-9: 25px;
+  }
   .container {
     max-width: 1200px;
   }
@@ -439,12 +502,39 @@ nav .nav-btn button {
 @media only screen and (max-width: 1281px) {
 }
 @media only screen and (max-width: 1280px) {
+  :root {
+    --fontSize-1: 45px;
+    --fontSize-7: 14px;
+  }
+
+  .container {
+    max-width: 1024px;
+  }
+  .s2-content {
+    width: 50%;
+  }
+
+  .s4-content {
+    width: 55%;
+  }
+
+  .s4-image img {
+    width: 400px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   /* responsive nav */
 
-  body{
+  .container {
+    max-width: 912px;
+  }
+
+  body {
     position: relative;
+  }
+
+  .menu-btn {
+    display: block;
   }
 
   nav {
@@ -454,26 +544,132 @@ nav .nav-btn button {
     right: 0;
     padding: 80px;
     background: #000;
+    top: -100%;
+    transition: var(--transition-2);
+    z-index: 9999;
   }
 
-  nav ul{
+  nav ul {
     flex-direction: column;
   }
 
-  .active{
+  nav ul li a {
+    font-size: var(--fontSize-9);
+    font-family: var(--fontFamily-michroma);
+  }
+
+  nav .nav-btn button {
+    font-size: var(--fontSize-9);
+    width: 230px;
+    height: 60px;
+  }
+
+  .active {
     top: 3%;
-    
+  }
+
+  .s2-content {
+    width: 100%;
+  }
+  /* 
+  hero */
+
+  .s1-content {
+    max-width: 100%;
+  }
+
+  .section4 {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .s4-content {
+    width: 100%;
+  }
+
+  .s4-image img {
+    max-width: 700px;
   }
 }
 @media only screen and (max-width: 912px) {
+  .container {
+    max-width: 820px;
+  }
+
+  .glass {
+    background: rgba(255, 235, 235, 0);
+    box-shadow: 0 8px 32px 0 rgba(17, 21, 75, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+  }
+
+  .s1-content {
+    color: white;
+    position: relative;
+    z-index: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .s2-content {
+    background: rgba(255, 235, 235, 0);
+    box-shadow: 0 8px 32px 0 rgba(17, 21, 75, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+  }
 }
 @media only screen and (max-width: 820px) {
+  :root {
+    --section-spacing: 80px;
+  }
+
+  .container {
+    max-width: 768px;
+  }
 }
 @media only screen and (max-width: 768px) {
+  :root {
+    --section-spacing: 50px;
+    --fontSize-6: 16px;
+    --fontSize-1: 40px;
+  }
+  .container {
+    padding: 15px;
+  }
+
+  .s1-counter {
+    gap: 80px;
+  }
 }
 @media only screen and (max-width: 540px) {
+  :root {
+    --fontSize-2: 30px;
+    --fontSize-1: 30px;
+    --fontSize-4: 18px;
+    --fontSize-9: 20px;
+  }
+
+  .s1-counter {
+    gap: 50px;
+  }
 }
 @media only screen and (max-width: 414px) {
+  :root {
+    --fontSize-2: 20px;
+    --fontSize-1: 23px;
+    --fontSize-6: 16px;
+  }
+
+  .s1-counter {
+    gap: 30px;
+  }
 }
 @media only screen and (max-width: 412px) {
 }
@@ -484,6 +680,9 @@ nav .nav-btn button {
 @media only screen and (max-width: 375px) {
 }
 @media only screen and (max-width: 360px) {
+  .s4-image img {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 280px) {
 }

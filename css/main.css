@@ -120,6 +120,9 @@ address {
   font-style: normal;
 }
 
+address {
+   font-style: normal;
+ }
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -137,7 +140,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -231,8 +235,8 @@ nav .nav-btn button {
   padding: 119px 0 67.5px 0;
   background-image: url("/images/hero\ image.svg");
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 45%;
+  background-position: 82% 50%;
+  background-size: 35%;
 }
 
 .s1-content {
@@ -488,37 +492,35 @@ nav .nav-btn button {
 }
 
 table {
-  background: var(--bg-gray-black);
-  border-radius: 20px;
-  padding: 64px 20px;
   width: 100%;
   text-align: center;
-  margin-top: 65px;
   overflow-x: scroll;
   border-collapse: collapse;
+  border-radius: 20px;
 }
 
 thead tr th {
   border-bottom: solid rgb(120, 114, 114) 0.5px;
-  padding: 27px 43px;
+  padding: 0px 43px 27px 43px;
   font-size: var(--fontSize-6);
   font-weight: var(--weight-bold);
   color: var(--text-blue);
   margin: 0 16px;
 }
 
-tbody tr td {
+tbody tr {
   border-bottom: solid rgb(143, 135, 135) 0.5px;
+}
+
+tbody tr td {
   padding: 27px 43px;
   font-size: var(--fontSize-7);
   font-weight: var(--weight-semiBold);
 }
 
-tbody tr td:nth-child(last-child) {
+tbody tr:nth-child(6) {
   border: none;
 }
-
-
 
 .crypto {
   display: flex;
@@ -533,11 +535,95 @@ tbody tr td:nth-child(last-child) {
   font-size: var(--fontSize-8);
 }
 .t-body {
+  margin-top: 65px;
+  background: var(--bg-gray-black);
+  border-radius: 20px;
+  padding: 60px 18px 0 18px;
   overflow-x: scroll;
 }
 
-@media only screen and (max-width: 1281px) {
+/* section ---------6 */
+.s6-content-1 {
+  width: 55%;
 }
+.s6-content-1 a {
+  color: var(--text-blue);
+  font-size: var(--fontSize-6);
+  font-weight: var(--weight-semiBold);
+}
+
+.s6-content-1 h2 {
+  font-family: var(--fontFamily-michroma);
+  font-size: var(--fontSize-9);
+  line-height: 48px;
+  font-weight: var(--weight-regular);
+}
+
+.s6-content-1 p {
+  font-size: var(--fontSize-6);
+  font-weight: var(--weight-regular);
+}
+
+.s6-content-1 p span {
+  color: var(--text-blue);
+  display: inline;
+}
+
+.s6-content-1 img {
+  width: 34.71px;
+}
+
+.s6-content-2 {
+  width: 50%;
+}
+
+.s6-content-2 p {
+  font-size: var(--fontSize-6);
+  margin-bottom: var(--fontSize-7);
+  line-height: 30px;
+  font-weight: var(--weight-regular);
+}
+
+.s6-content-2 h3 {
+  font-size: var(--fontSize-6);
+  font-weight: var(--weight-bold);
+}
+
+.s6-content-2 h4 {
+  font-size: var(--fontSize-8);
+  color: var(--text-gray);
+}
+
+.s6-content-2 img{
+  width: 78px;
+}
+
+.s6-contents{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+@media only screen and (max-width: 1800px) {
+  .section1 {
+    background-size: 38%;
+    background-position: 83%;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  .section1 {
+    background-size: 42%;
+    background-position: 92%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .section1 {
+    background-size: 45%;
+    background-position: 100%;
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   :root {
     --fontSize-1: 45px;
@@ -664,11 +750,16 @@ tbody tr td:nth-child(last-child) {
     max-width: 820px;
   }
 
+  .section1 {
+    background-size: 600px;
+    background-position: center;
+  }
+
   .glass {
     background: rgba(255, 235, 235, 0);
     box-shadow: 0 8px 32px 0 rgba(17, 21, 75, 0.37);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 15px;
     position: relative;
@@ -701,9 +792,6 @@ tbody tr td:nth-child(last-child) {
     max-width: 768px;
   }
 
-  .section1 {
-    background-size: contain;
-  }
   .section2-bg {
     background-size: contain;
   }
@@ -733,6 +821,7 @@ tbody tr td:nth-child(last-child) {
     max-width: 500px;
   }
 }
+
 @media only screen and (max-width: 540px) {
   :root {
     --fontSize-2: 30px;
